@@ -10,9 +10,9 @@ class GeradorDeSenha:
         interface = [
             [sg.Text('Tipo de criptografia', auto_size_text=True),
              sg.Checkbox('AES-128', key='128', auto_size_text=True), sg.Checkbox('AES-192', key='192', auto_size_text=True), sg.Checkbox('AES-256', key='256', auto_size_text=True)],
-            [sg.Input(size=(35, 10), key='texto', pad=((0, 0), (10, 10)))],
+            [sg.Input(size=(35, 10), key='texto', pad=((0, 0), (10, 10)), font=('Bold', 14))],
             [sg.Button('Criptografar', size=(10, 2), pad=(0, 0))],
-            [sg.Output(size=(50, 5), font='18', pad=((0, 0), (10, 10)))]
+            [sg.Output(size=(40, 7), font=('Bold', 16), pad=((0, 0), (10, 10)))]
         ]
         self.janela = sg.Window('Criptografia', interface)
 
