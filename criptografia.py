@@ -16,8 +16,8 @@ def criptografar(msg, comp=16):
     return texto, key, nonce, tag
 
 
-'''
-def descriptografar(noc, texto):
+
+def descriptografar(key, noc, texto):
     cipher = AES.new(key, AES.MODE_EAX, nonce=noc)
     texto2 = cipher.decrypt(texto)
-    return texto2.decode('ascii')'''
+    return texto2.decode('ascii');
