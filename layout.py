@@ -1,6 +1,8 @@
 from criptografia import criptografar
 from criptografia import descriptografar
+from criptografia import descriptografar
 import PySimpleGUI as sg
+
 
 
 # Deve ter 16, 24 ou 32 bytes de comprimento
@@ -18,7 +20,9 @@ class GeradorDeSenha:
         self.janela = sg.Window('Criptografia', interface)
 
 
+
     def Inicializador(self):
+        texto_criptografado = None  # Inicializa a variável como None
         texto_criptografado = None  # Inicializa a variável como None
         while True:
             evento, valor = self.janela.read()
@@ -33,9 +37,17 @@ class GeradorDeSenha:
                 print(f'Nonce = {texto_criptografado[2]}')  # Armazena o nonce na variável global
 
             elif evento == 'Criptografar' and valor['192']:
+                print(f'Chave = {texto_criptografado[1]}')
+                print(f'Nonce = {texto_criptografado[2]}')  # Armazena o nonce na variável global
+
+            elif evento == 'Criptografar' and valor['192']:
                 texto = valor['texto']
                 texto_criptografado = criptografar(texto, 24)
                 print('AES-192 = ', texto_criptografado[0])
+                print(f'Chave = {texto_criptografado[1]}')
+                print(f'Nonce = {texto_criptografado[2]}')  # Armazena o nonce na variável global
+
+            elif evento == 'Criptografar' and valor['256']:
                 print(f'Chave = {texto_criptografado[1]}')
                 print(f'Nonce = {texto_criptografado[2]}')  # Armazena o nonce na variável global
 
