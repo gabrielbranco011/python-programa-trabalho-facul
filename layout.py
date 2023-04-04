@@ -1,6 +1,5 @@
 from criptografia import criptografar
 from criptografia import descriptografar
-from criptografia import descriptografar
 import PySimpleGUI as sg
 
 
